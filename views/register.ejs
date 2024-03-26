@@ -1,0 +1,16 @@
+<%- include('comp/header')  %>
+<div class="w-full h-screen bg-zinc-200 flex justify-center items-center bg-[url('https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxyYW5kb218ZW58MHx8MHx8fDA%3D')] bg-cover">
+    <div class="w-3/4 max-w-md p-10 color- rounded-xl bg-zinc-300/80">
+      <h1 class="text-red-600 font-bold text-3xl text-center">SignUp</h1>
+      <form action="/register" method="post">
+        <input class="mt-6 p-2 bg-zinc-200 border-gray-950 block w-full rounded-xl" type="text" placeholder="Username" name="username">
+        <input class="mt-4 p-2 bg-zinc-200 border-gray-950 block w-full rounded-xl" type="email" placeholder="Email" name="email">
+        <input class="mt-4 p-2 bg-zinc-200 border-gray-950 block w-full rounded-xl" type="password" placeholder="Password" name="password">
+        <div class="flex w-full justify-between mt-4 ">
+          <span><a href="/" class="text-xs mx-2">Already have an account?</a></span>
+          <button class="px-4 py-1 text-white font-bold rounded-full bg-red-500" type="submit">SignUp</button>
+        </div>
+      </form>
+    </div>
+    </div>
+<%- include('comp/footer')  %>

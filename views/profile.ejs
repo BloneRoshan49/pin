@@ -1,0 +1,34 @@
+<%- include('comp/header')  %>
+<div class="min-h-screen w-full bg-slate-200">
+    <div class="w-full bg-slate-800 flex justify-center p-5">
+        <form hidden id="uploadform" action="/fileupload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+        </form>
+        <div class="w-52  h-58 flex flex-col items-center relative text-white">
+            <div class="w-36 h-36 rounded-full object-cover truncate bg-white">
+                <img class="object-cover w-full h-full" src="/images/uploads/<%= user.profileImage  %>" alt="">
+            </div>
+            <span id="iconBtn" class="z-1"><i class="ri-add-circle-fill"></i></span>
+            <span class="font-bold text-2xl"><%= user.username  %></span>
+            <a class="py-2 px-4 mt-2 rounded-xl bg-red-600 cursor-pointer" href="/add">Uploads</a>
+        </div>
+    </div>
+    <div class="flex flex-wrap w-full p-2 gap-5 ">
+        <div>
+        <div class="w-48 h-52 bg-slate-500 rounded-xl truncate">
+            <img class="object-cover w-full h-full" src="/images/uploads/<%= user?.posts[0]?.image %>" alt="photo">
+        </div>
+        <a href="/show/posts" class="inline-block mt-2 font-semibold">Your Uploaded Pins</a>
+        <h5>Pins <%= user.posts.length  %></h5>
+    </div>
+    </div>
+</div>
+<script>
+    document.querySelector("#iconBtn").addEventListener("click", function(){
+        document.querySelector("#uploadform input").click();
+    });
+    document.querySelector("#uploadform input").addEventListener("change", function(){
+        document.querySelector("#uploadform").submit();
+    })
+</script>
+<%- include('comp/footer')  %>
